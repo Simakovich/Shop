@@ -1,0 +1,33 @@
+﻿
+@model IEnumerable<Shop.Models.Towel>
+@{
+    //ViewData["Title"] = "Список Пододеяльников";
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Магазин постелн</title>
+</head>
+<body>
+    <h3>Подоеяльники</h3>
+    <table>
+        <tr>
+            <td>Материал</td>
+            <td>Цвет</td>
+            <td>Длина</td>
+            <td></td>
+        </tr>
+        @foreach (var towel in Model)
+        {
+            <tr>
+                <td>@towel.Material</td>
+                <td>@towel.Color</td>
+                <td>@towel.With</td>
+                <td><a href="~/Home/Buy/@towel.Id">Купить</a></td>
+            </tr>
+        }
+    </table>
+</body>
+</html>
